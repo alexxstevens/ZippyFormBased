@@ -11,7 +11,7 @@
 
     function get_type_name($type_code) {
         global $db;
-        $query = 'SELECT * FROM types WHERE type_code = :type_code';
+        $query = 'SELECT * FROM types WHERE type_code= :type_code';
         $statement = $db->prepare($query);
         $statement->bindValue(':type_code', $type_code);
         $statement->execute();
@@ -23,7 +23,7 @@
 
     function delete_type($type_code) {
         global $db;
-        $query = 'DELETE FROM types WHERE type_code = :type_code';
+        $query = 'DELETE FROM types WHERE type_code= :type_code';
         $statement = $db->prepare($query);
         $statement->bindValue(':type_code', $type_code);
         $statement->execute();

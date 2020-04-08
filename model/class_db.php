@@ -11,7 +11,7 @@
 
     function get_class_name($class_code) {
         global $db;
-        $query = 'SELECT * FROM classes WHERE class_code = :class_code';
+        $query = 'SELECT * FROM classes WHERE class_code= :class_code';
         $statement = $db->prepare($query);
         $statement->bindValue(':class_code', $class_code);
         $statement->execute();
@@ -23,7 +23,7 @@
 
     function delete_class($class_code) {
         global $db;
-        $query = 'DELETE FROM classes WHERE class_code = :class_code';
+        $query = 'DELETE FROM classes WHERE class_code= :class_code';
         $statement = $db->prepare($query);
         $statement->bindValue(':class_code', $class_code);
         $statement->execute();

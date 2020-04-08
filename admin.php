@@ -14,8 +14,8 @@
     }
 
     if ($action == 'list_vehicles') {
-        $type_code = filter_input(INPUT_GET, 'type_code', FILTER_VALIDATE_INT);
-        $class_code = filter_input(INPUT_GET, 'class_code', FILTER_VALIDATE_INT);
+        $type_code= filter_input(INPUT_GET, 'type_code', FILTER_VALIDATE_INT);
+        $class_code= filter_input(INPUT_GET, 'class_code', FILTER_VALIDATE_INT);
         $make = filter_input(INPUT_GET, 'make');
         $sort = filter_input(INPUT_GET, 'sort');
 
@@ -23,10 +23,10 @@
             $sort = 'price';
         }
 
-        if ($type_code != NULL && $type_code != FALSE) {
+        if ($type_code!= NULL && $type_code!= FALSE) {
             $type_name = get_type_name($type_code);
             $vehicles = get_vehicles_by_type($type_code, $sort);
-        } else if ($class_code != NULL && $class_code != FALSE) {
+        } else if ($class_code!= NULL && $class_code!= FALSE) {
             $class_name = get_class_name($class_code);
             $vehicles = get_vehicles_by_class($class_code, $sort);
         } else if ($make != NULL && $make != FALSE) {
@@ -58,8 +58,8 @@
             header("Location: admin.php"); //Zippys Back End page
         }
     } else if ($action == 'delete_type') {
-        $type_code = filter_input(INPUT_POST, 'type_code', FILTER_VALIDATE_INT);
-        if ($type_code == NULL || $type_code == FALSE) {
+        $type_code= filter_input(INPUT_POST, 'type_code', FILTER_VALIDATE_INT);
+        if ($type_code== NULL || $type_code== FALSE) {
             $error = "Missing or incorrect type code.";
             include('errors/error.php');
         } else {
@@ -67,8 +67,8 @@
             header("Location: admin.php?action=list_types");
         }
     } else if ($action == 'delete_class') {
-        $class_code = filter_input(INPUT_POST, 'class_code', FILTER_VALIDATE_INT);
-        if ($class_code == NULL || $class_code == FALSE) {
+        $class_code= filter_input(INPUT_POST, 'class_code', FILTER_VALIDATE_INT);
+        if ($class_code== NULL || $class_code== FALSE) {
             $error = "Missing or incorrect class code.";
             include('errors/error.php');
         } else {
@@ -81,13 +81,13 @@
         include('add_vehicle_form.php');
         include('view/footer.php');
     } else if ($action == 'add_vehicle') {
-        $type_code = filter_input(INPUT_POST, 'type_code', FILTER_VALIDATE_INT);
-        $class_code = filter_input(INPUT_POST, 'class_code', FILTER_VALIDATE_INT);
+        $type_code= filter_input(INPUT_POST, 'type_code', FILTER_VALIDATE_INT);
+        $class_code= filter_input(INPUT_POST, 'class_code', FILTER_VALIDATE_INT);
         $year = filter_input(INPUT_POST, 'year', FILTER_VALIDATE_INT);
         $make = filter_input(INPUT_POST, 'make');
         $model = filter_input(INPUT_POST, 'model');
         $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_INT);
-        if ($type_code == NULL || $type_code == FALSE || $class_code == NULL || $class_code == FALSE || $year == NULL || $make == NULL || $model == NULL || $price == NULL ) {
+        if ($type_code== NULL || $type_code== FALSE || $class_code== NULL || $class_code== FALSE || $year == NULL || $make == NULL || $model == NULL || $price == NULL ) {
             $error = "Invalid vehicle data. Check all fields and try again.";
             include('errors/error.php');
         } else {

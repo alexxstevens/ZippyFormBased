@@ -6,18 +6,18 @@
         } else {
             $orderby = 'V.price';
         }
-        if ($class_code == NULL || $class_code == FALSE) {
+        if ($class_code== NULL || $class_code== FALSE) {
             $query = 'SELECT V.year, V.make, V.model, V.price, T.type_name, C.class_name 
             FROM vehicles V  
-            LEFT JOIN classes C ON V.class_code = C.class_code 
-            LEFT JOIN types T ON V.type_code = T.type_code
+            LEFT JOIN classes C ON V.class_code= C.class_code
+            LEFT JOIN types T ON V.type_code= T.type_code
             ORDER BY ' . $orderby . ' DESC';
         } else {
             $query = 'SELECT V.year, V.make, V.model, V.price, T.type_name, C.class_name 
             FROM vehicles V 
-            LEFT JOIN classes C ON V.class_code = C.class_code 
-            LEFT JOIN types T ON V.type_code = T.type_code
-            WHERE V.class_code = :class_code 
+            LEFT JOIN classes C ON V.class_code= C.class_code
+            LEFT JOIN types T ON V.type_code= T.type_code
+            WHERE V.class_code= :class_code
             ORDER BY ' . $orderby . ' DESC';
         }
         $statement = $db->prepare($query);
@@ -35,18 +35,18 @@
         } else {
             $orderby = 'V.price';
         }
-        if ($type_code == NULL || $type_code == FALSE) {
+        if ($type_code== NULL || $type_code== FALSE) {
             $query = 'SELECT V.year, V.make, V.model, V.price, T.type_name, C.class_name 
             FROM vehicles V 
-            LEFT JOIN classes C ON V.class_code = C.class_code 
-            LEFT JOIN types T ON V.type_code = T.type_code 
+            LEFT JOIN classes C ON V.class_code= C.class_code
+            LEFT JOIN types T ON V.type_code= T.type_code
             ORDER BY ' . $orderby . ' DESC';
         } else {
             $query = 'SELECT V.year, V.make, V.model, V.price, T.type_name, C.class_name 
             FROM vehicles V 
-            LEFT JOIN classes C ON V.class_code = C.class_code 
-            LEFT JOIN types T ON V.type_code = T.type_code 
-            WHERE V.type_code = :type_code 
+            LEFT JOIN classes C ON V.class_code= C.class_code
+            LEFT JOIN types T ON V.type_code= T.type_code
+            WHERE V.type_code= :type_code
             ORDER BY ' . $orderby . ' DESC';
         }
         $statement = $db->prepare($query);
@@ -67,14 +67,14 @@
         if ($make == NULL || $make == FALSE) {
             $query = 'SELECT V.year, V.make, V.model, V.price, T.type_name, C.class_name 
                 FROM vehicles V 
-                LEFT JOIN classes C ON V.class_code = C.class_code 
-                LEFT JOIN types T ON V.type_code = T.type_code 
+                LEFT JOIN classes C ON V.class_code= C.class_code
+                LEFT JOIN types T ON V.type_code= T.type_code
                 ORDER BY ' . $orderby . ' DESC';
         } else {
             $query = 'SELECT V.year, V.make, V.model, V.price, T.type_name, C.class_name 
                 FROM vehicles V 
-                LEFT JOIN classes C ON V.class_code = C.class_code 
-                LEFT JOIN types T ON V.type_code = T.type_code 
+                LEFT JOIN classes C ON V.class_code= C.class_code
+                LEFT JOIN types T ON V.type_code= T.type_code
                 WHERE V.make = :make 
                 ORDER BY ' . $orderby . ' DESC';
         }
@@ -95,8 +95,8 @@
         }
         $query = 'SELECT V.product_id, V.year, V.make, V.model, V.price, T.type_name, C.class_name 
             FROM vehicles V 
-            LEFT JOIN classes C ON V.class_code = C.class_code 
-            LEFT JOIN types T ON V.type_code = T.type_code 
+            LEFT JOIN classes C ON V.class_code= C.class_code
+            LEFT JOIN types T ON V.type_code= T.type_code
             ORDER BY ' . $orderby . ' DESC';
         $statement = $db->prepare($query);
         $statement->execute();
