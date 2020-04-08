@@ -93,7 +93,7 @@
         } else {
             $orderby = 'V.price';
         }
-        $query = 'SELECT V.product_id       , V.year, V.make, V.model, V.price, T.type_name, C.class_name 
+        $query = 'SELECT V.product_id, V.year, V.make, V.model, V.price, T.type_name, C.class_name 
             FROM vehicles V 
             LEFT JOIN classes C ON V.class_code = C.class_code 
             LEFT JOIN types T ON V.type_code = T.type_code 
@@ -105,22 +105,22 @@
         return $vehicles;
     }
 
-    function get_vehicle($product_id       ) {
+    function get_vehicle($product_id) {
         global $db;
-        $query = 'SELECT * FROM vehicles WHERE product_id = :product_id';
+        $query = 'SELECT * FROM vehicles WHERE product_id= :product_id';
         $statement = $db->prepare($query);
-        $statement->bindValue(':product_id       ', $product_id       );
+        $statement->bindValue(':product_id', $product_id);
         $statement->execute();
         $vehicle = $statement->fetch();
         $statement->closeCursor();
         return $vehicle;
     }
 
-    function delete_vehicle($product_id       ) {
+    function delete_vehicle($product_id) {
         global $db;
-        $query = 'DELETE FROM vehicles WHERE product_id        = :product_id       ';
+        $query = 'DELETE FROM vehicles WHERE product_id= :product_id';
         $statement = $db->prepare($query);
-        $statement->bindValue(':product_id       ', $product_id       );
+        $statement->bindValue(':product_id', $product_id);
         $statement->execute();
         $statement->closeCursor();
     }

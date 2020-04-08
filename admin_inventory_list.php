@@ -86,6 +86,7 @@
 
                         <?php foreach ($vehicles as $vehicle) : ?>
                         <tr>
+                            <td class="product_id_hidden"><?php echo $vehicle['product_id']; ?></td>
                             <td class="main"><?php echo $vehicle['year']; ?></td>
                             <td class="main"><?php echo $vehicle['make']; ?></td>
                             <td class="main"><?php echo $vehicle['model']; ?></td>
@@ -103,7 +104,7 @@
                             <td class="main">
                                 <form action="admin.php" method="post">
                                     <input type="hidden" name="action" value="delete_vehicle">
-                                    <input type="hidden" name="product_id       "
+                                    <input type="hidden" name="product_id"
                                         value="<?php echo $vehicle['product_id']; ?>">
                                     <input type="submit" value="Remove">
                                 </form>
