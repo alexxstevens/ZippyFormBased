@@ -4,12 +4,12 @@ require('database.php');
 function add_admin($username, $password) {
   global $db;
   $hash = password_hash ($password, PASSWORD_DEFAULT);
-  $query - 'INSERT INTO  administrators (username, password) VALUES (:username, :password)';
+  $query = 'INSERT INTO  administrators (username, password) VALUES (:username, :password)';
   $statement = $db->prepare($query);
   $statement->bindValue(':username', $username);
-  $statement->bindVAlue(':password', $hash);
-  $statement = execute();
-  $statement ->closeCursor();
+  $statement->bindValue(':password', $hash);
+  $statement->execute();
+  $statement->closeCursor();
 }
 
 function is_valid_admin_login($username, $password) {

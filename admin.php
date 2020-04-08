@@ -1,10 +1,11 @@
 <?php
+    session_start();
+    require_once('util/valid_admin.php');
     require('model/database.php');
     require('model/vehicle_db.php');
     require('model/type_db.php');
     require('model/class_db.php');
     require('model/make_db.php');
-    require('model/admin_db.php');
 
     $action = filter_input(INPUT_POST, 'action');
     if ($action == NULL) {
@@ -103,7 +104,21 @@
         $class_name = filter_input(INPUT_POST, 'class_name');
         add_class($class_name);
         header("Location: admin.php?action=list_classes");
-    }
+    } else if ($action == 'logout') {
+        //delete session variable
+        unset ($_SESSION['is_valid_admin']);
+        //destroy session
+        session_destroy();
+        //delete session cookie
+        $name = session_name();
+        $expire = strtotime('-1 year');
+        $params = session_get_cookie_params();
+        $path = $params['path'];
+        $domain = $params['domain'];
+        $secure = $params['secure'];
+        $httponly = $params['httponly'];
+        setcookie ($name, '', $expire, $path, $domain, $secure, $httponly);
+        header("Location: zua-login.php");}
 ?> 
 
    

@@ -15,8 +15,6 @@
 <body>
     <header>
         <div id="header">
-            <!-- <span id="logo">
-            <a href="index.php"><img src="../../images/logo.png" alt="logo" height="40" width="60"></a></span> -->
             <span id="heading"><a href="admin.php"><h1 id="head">  Zippy's Used Auto Inventory</h1></a></span>
             <h2>ADMIN PAGE</h2>
                 <p id="authorized">*AUTHORIZED USE ONLY*</p>

@@ -169,6 +169,19 @@ h2.add {
   color: red;
   font-weight: bold;
 }
+h3 {
+  color: red;
+}
+
+input[type=password], select  {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
 input[type=text], select {
   width: 100%;
@@ -180,6 +193,7 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
+
 input[type=number], select {
   width: 100%;
   padding: 6px 10px;
@@ -189,6 +203,8 @@ input[type=number], select {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+
 
 
 input[type=submit] {

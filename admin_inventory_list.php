@@ -1,5 +1,11 @@
-<?php include 'view/header-admin.php'; ?>
+<?php 
+include 'view/header-admin.php';
+ ?>
 <br>
+<?php
+    if(isset($_SESSION['is_valid_admin'])) {?>
+    <h3>Welcome Back!</h3><?php }
+?>
 <main>
         <section class="dropdown">
             <form action="admin.php" method="get" id="inventory_selection">

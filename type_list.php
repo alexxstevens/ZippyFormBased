@@ -1,4 +1,7 @@
-<?php include 'view/header-admin.php'; ?>
+<?php 
+include 'view/header-admin.php';
+
+require_once('util/valid_admin.php'); ?>
 <br><br>
 <div id="type_list">
     <h2 class="list">Vehicle Type List</h2>

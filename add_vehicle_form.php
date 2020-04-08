@@ -1,4 +1,6 @@
-<?php include 'view/header-admin.php'; ?>
+<?php 
+include 'view/header-admin.php';
+require_once('util/valid_admin.php'); ?>
 <main>
     <br>
     <h2 class="add">ADD VEHICLE</h2><br>
