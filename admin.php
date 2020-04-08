@@ -49,9 +49,9 @@
         include('class_list.php');
         include('view/footer.php');
     } else if ($action == 'delete_vehicle') {
-        $product_id        = filter_input(INPUT_POST, 'product_id       ', FILTER_VALIDATE_INT);
-        if ($product_id        == NULL || $product_id        == FALSE) {
-            $error = "Missing or incorrect vehicle id.";
+        $product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
+        if ($product_id == NULL || $product_id == FALSE) {
+            $error = "Missing or incorrect product id.";
             include('errors/error.php');
         } else {
             delete_vehicle($product_id       );
