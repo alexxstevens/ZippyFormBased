@@ -16,7 +16,7 @@ include 'view/header.php';
           } else { ?>
         <p class="center-text">Please fill out the form below and click the "Register" button to register with Zippy's Used Autos. </p>
         <div class="add">
-            <form action="" method="get" id="register_form">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get" id="register_form">
                 <input type="hidden" name="action" value="register">
                 <label>Please enter your first name:</label>
                 <input type="text" name="firstName" max="30" required><br>

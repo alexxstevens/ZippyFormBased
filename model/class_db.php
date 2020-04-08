@@ -39,5 +39,5 @@
         $statement->bindValue(':class_name', $class_name);
         $statement->execute();
         $statement->closeCursor();
-    }
+    } 
 ?>

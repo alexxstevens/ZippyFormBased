@@ -4,6 +4,7 @@
     require('model/type_db.php');
     require('model/class_db.php');
     require('model/make_db.php');
+    require('model/admin_db.php');
 
     $action = filter_input(INPUT_POST, 'action');
     if ($action == NULL) {
