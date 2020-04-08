@@ -104,7 +104,7 @@
                                 <form action="admin.php" method="post">
                                     <input type="hidden" name="action" value="delete_vehicle">
                                     <input type="hidden" name="product_id       "
-                                        value="<?php echo $vehicle['product_id       ']; ?>">
+                                        value="<?php echo $vehicle['product_id']; ?>">
                                     <input type="submit" value="Remove">
                                 </form>
                             </td>

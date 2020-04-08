@@ -60,7 +60,7 @@
     } else if ($action == 'delete_type') {
         $type_code = filter_input(INPUT_POST, 'type_code', FILTER_VALIDATE_INT);
         if ($type_code == NULL || $type_code == FALSE) {
-            $error = "Missing or incorrect type id.";
+            $error = "Missing or incorrect type code.";
             include('errors/error.php');
         } else {
             delete_type($type_code);
@@ -69,7 +69,7 @@
     } else if ($action == 'delete_class') {
         $class_code = filter_input(INPUT_POST, 'class_code', FILTER_VALIDATE_INT);
         if ($class_code == NULL || $class_code == FALSE) {
-            $error = "Missing or incorrect class id.";
+            $error = "Missing or incorrect class code.";
             include('errors/error.php');
         } else {
             delete_class($class_code);
